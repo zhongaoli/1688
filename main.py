@@ -31,7 +31,7 @@ api = True
 
 
 def file():
-    path = r"D:\Downloads\4e5ccbbb-75e9-4db0-809e-8934351b5165.jpeg"
+    path = r"D:\Downloads\O1CN01JtdgsB1XKXZTCdkg6_!!3166682905-0-cib (1).jpg"
     img_obj = ImgSearch.init_for_file(path, api, 1)
     run(img_obj)
 
