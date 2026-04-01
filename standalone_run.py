@@ -378,7 +378,7 @@ class ImgSearch:
 
     def parse_offer_list(self, offer_list):
         item_ls = []
-        # print("返回的结果列表：",offer_list)
+        # print("返回的原始结果列表：",offer_list)
         for offer in offer_list:
             item = {}
             self.offset += 1
@@ -388,7 +388,9 @@ class ImgSearch:
             trade_quantity = offer.get("tradeQuantity") or {}
             offer_price = (offer.get("tradePrice") or {}).get("offerPrice") or {}
             position_labels = (offer.get("commonPositionLabels") or {}).get("offerMiddle") or []
+            normalizationScore = information.get("normalizationScore") or 0.0
 
+            item["normalizationScore"] = normalizationScore
             item["brand"] = (offer.get("brand") or {}).get("name")
             item["image_url"] = (offer.get("image") or {}).get("imgUrl")
             item["offer_id"] = offer.get("id")
